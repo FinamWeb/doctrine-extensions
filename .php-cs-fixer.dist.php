@@ -6,7 +6,6 @@ $finder = PhpCsFixer\Finder::create()
     ->ignoreVCS(true)
     ->exclude(
         [
-            'node_modules',
             'vendor',
         ])
     ->files()

@@ -21,7 +21,7 @@ class Every extends FunctionNode
     /**
      * @throws \Doctrine\ORM\Query\QueryException
      */
-    public function parse(Parser $parser)
+    public function parse(Parser $parser): void
     {
         $parser->match(Lexer::T_IDENTIFIER);
         $parser->match(Lexer::T_OPEN_PARENTHESIS);
@@ -29,10 +29,7 @@ class Every extends FunctionNode
         $parser->match(Lexer::T_CLOSE_PARENTHESIS);
     }
 
-    /**
-     * @return string
-     */
-    public function getSql(SqlWalker $sqlWalker)
+    public function getSql(SqlWalker $sqlWalker): string
     {
         return 'EVERY('.$this->conditionalExpression->dispatch($sqlWalker).')';
     }

@@ -21,7 +21,7 @@ class InArray extends FunctionNode
     /**
      * @throws \Doctrine\ORM\Query\QueryException
      */
-    public function parse(Parser $parser)
+    public function parse(Parser $parser): void
     {
         $parser->match(Lexer::T_IDENTIFIER);
         $parser->match(Lexer::T_OPEN_PARENTHESIS);
@@ -32,11 +32,9 @@ class InArray extends FunctionNode
     }
 
     /**
-     * @return string
-     *
      * @throws \Doctrine\ORM\Query\AST\ASTException
      */
-    public function getSql(SqlWalker $sqlWalker)
+    public function getSql(SqlWalker $sqlWalker): string
     {
         return '('.$this->value->dispatch($sqlWalker).' <@ '.$this->fieldName->dispatch($sqlWalker).')';
     }

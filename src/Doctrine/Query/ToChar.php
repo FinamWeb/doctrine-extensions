@@ -22,8 +22,10 @@ class ToChar extends FunctionNode
 
     /**
      * @param Parser $parser
+     *
+     * @throws \Doctrine\ORM\Query\QueryException
      */
-    public function parse(Parser $parser)
+    public function parse(Parser $parser): void
     {
         $parser->match(Lexer::T_IDENTIFIER);
         $parser->match(Lexer::T_OPEN_PARENTHESIS);
@@ -36,10 +38,8 @@ class ToChar extends FunctionNode
 
     /**
      * @param SqlWalker $sqlWalker
-     *
-     * @return string
      */
-    public function getSql(SqlWalker $sqlWalker)
+    public function getSql(SqlWalker $sqlWalker): string
     {
         return 'to_char(' . $this->field->dispatch($sqlWalker) . ',' . $this->format->dispatch($sqlWalker) . ')';
     }
