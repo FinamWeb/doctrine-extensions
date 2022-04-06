@@ -1,0 +1,31 @@
+{
+    "name": "just2trade/doctrine-extensions",
+    "description": "Set of functions for doctrine and PgSql",
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": "^7.1|^8.0"
+    },
+    "require-dev": {
+        "ext-sqlite": "*",
+        "doctrine/orm": "~2.0",
+        "phpunit/phpunit": "~9.5",
+        "symfony/cache": "^5.4|^6.0",
+        "doctrine/annotations": "^1.13"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Just2trade\\DoctrineExtensions\\Tests\\": "tests/"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Just2trade\\DoctrineExtensions\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.1.x-dev"
+        }
+    }
+}
