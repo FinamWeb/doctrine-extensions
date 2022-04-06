@@ -5,7 +5,7 @@ namespace Just2trade\DoctrineExtensions\Tests\Query;
 
 use Just2trade\DoctrineExtensions\Tests\DoctrineExtensionTestCase;
 
-class TestFunctions extends DoctrineExtensionTestCase
+class FunctionsTest extends DoctrineExtensionTestCase
 {
     public function testDateTrunc(): void
     {
