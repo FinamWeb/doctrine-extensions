@@ -1,6 +1,8 @@
 Just2trade Doctrine Extension
 ==================
 
+[![Tests](https://github.com/FinamWeb/doctrine-extensions/actions/workflows/tests.yml/badge.svg)](https://github.com/FinamWeb/doctrine-extensions/actions/workflows/tests.yml)
+
 This package contains useful functions of PgSQL implemented for Doctrine DQL
 
 * DateTrunc
